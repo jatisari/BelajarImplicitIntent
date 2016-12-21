@@ -40,4 +40,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnKamera"
         android:layout_width="match_parent"></Button>
+    <Button
+        android:text="Peta"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnMap"
+        android:layout_width="match_parent"></Button>
 </LinearLayout>
