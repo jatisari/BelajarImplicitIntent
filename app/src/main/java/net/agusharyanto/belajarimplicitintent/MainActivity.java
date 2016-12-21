@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         Button btnBelajarAndroid = (Button)findViewById(R.id.btnBelajarAndroid);
         Button btnJadwalPuasa = (Button)findViewById(R.id.btnDetik);
         Button btnKamera = (Button)findViewById(R.id.btnKamera);
+        Button btnMap = (Button)findViewById(R.id.btnMap);
+
         btnMcDonald.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 // getRequest(txtResult,txtUrl);
@@ -49,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 CallIntent(v);
             }
         });
+        btnMap.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                // getRequest(txtResult,txtUrl);
+                CallIntent(v);
+            }
+        });
     }
     public void CallIntent(View view) {
         Intent intent = null;
@@ -60,28 +68,30 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btnMcDonald:
                 //akan melakukan Call ke nomor 14045
-                intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:14045"));
+                intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:14045"));
                 startActivity(intent);
                 break;
             case R.id.btnBelajarAndroid:
-                //akan memanggil browser dan menampilkan website
-                http://agusharyanto.net
+
                 intent = new Intent(Intent.ACTION_VIEW, Uri
                         .parse("http://agusharyanto.net"));
                 startActivity(intent);
                 break;
             case R.id.btnDetik:
-                //akan memanggil browser dan menampilkan website
-                http://www.detik.com/
-                37
+
                 intent = new Intent(Intent.ACTION_VIEW, Uri
-                        .parse("http://www.detik.com/"));
+                        .parse("http://www.kemendagri.go.id/"));
                 startActivity(intent);
                 break;
             case R.id.btnKamera:
                 //akan memanggil fungsi Camera android
                 intent = new Intent("android.media.action.IMAGE_CAPTURE");
                 startActivityForResult(intent, 0);
+                break;
+            case R.id.btnMap:
+                intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("http://maps.google.com/maps?saddr=ragunan&daddr=mampang"));
+                startActivity(intent);
                 break;
             default:
                 break;
